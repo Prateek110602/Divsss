@@ -1,0 +1,50 @@
+/* Day 9 — The Last Note (final reveal) */
+
+#day-content, #incomplete-screen { max-width: 620px; width: 100%; }
+
+.calm-stage {
+  text-align: center;
+  max-width: 480px;
+  animation: fadeIn 1.4s ease both;
+}
+.calm-stage .lead { color: var(--text-muted); margin-bottom: var(--space-lg); }
+
+.envelope-stage, .letter-stage { animation: floatUp 900ms ease both; }
+
+.final-letter { max-width: 560px; }
+
+.invite-card {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, rgba(201,162,92,0.14), rgba(201,162,92,0.04));
+  border: 1px solid var(--border-soft);
+  text-align: center;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.invite-details {
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+  text-align: left;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.invite-details div { display: flex; justify-content: space-between; gap: 1em; border-bottom: 1px dashed var(--border-soft); padding-bottom: 0.4em; }
+.invite-details dt { font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.invite-details dd { margin: 0; font-family: var(--font-serif); font-weight: 600; color: var(--dark-chocolate); }
+
+.rsvp-response {
+  margin-top: var(--space-sm);
+  font-size: 1.5rem;
+  color: var(--rose-accent);
+  animation: fadeIn 700ms ease both;
+}
+
+.letter .signature {
+  font-size: 1.7rem;
+  margin-top: var(--space-lg);
+  display: block;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day Eight — The Vault</title>
+<meta name="description" content="Day eight of nine.">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="day-label">Day Eight <span aria-hidden="true">·</span> 8 of 9</div>
+
+  <main id="locked-screen" class="page-shell" hidden>
+    <div class="locked-screen"></div>
+  </main>
+
+  <main id="day-content" class="page-shell" hidden aria-hidden="true">
+    <p class="eyebrow" style="text-align:center;">everything you've collected so far</p>
+    <h1 style="text-align:center;">This one needs all of you, not just today.</h1>
+    <p class="lead" style="text-align:center;max-width:520px;margin:0 auto var(--space-md);color:var(--text-muted);">
+      Three answers. All of them already live somewhere in the last seven days.
+    </p>
+
+    <div class="vault" id="vault">
+      <form id="vaultForm" class="vault-form" autocomplete="off">
+        <div class="vault-slot">
+          <label for="slot1">the colour you call yours</label>
+          <input id="slot1" type="text" placeholder="..." />
+        </div>
+        <div class="vault-slot">
+          <label for="slot2">the place under a sky full of stars</label>
+          <input id="slot2" type="text" placeholder="..." />
+        </div>
+        <div class="vault-slot">
+          <label for="slot3">what you call him when he forgets things</label>
+          <input id="slot3" type="text" placeholder="..." />
+        </div>
+        <button type="submit" class="btn btn-primary">Open the vault</button>
+      </form>
+
+      <div class="vault-open" id="vaultOpen" hidden>
+        <p class="journal-fragment" id="revealFragment"></p>
+        <p id="revealText"></p>
+        <p class="handwritten" style="font-size:1.4rem;color:var(--rose-accent);">— one page left, Mrigguuu</p>
+      </div>
+    </div>
+
+    <p class="hint-box" id="vaultHint" aria-live="polite"></p>
+
+    <div class="progress-dots" aria-hidden="true">
+      <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
+      <span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span>
+    </div>
+  </main>
+
+  <script src="../assets/config/config.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/particles.js"></script>
+  <script src="../assets/js/utils.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

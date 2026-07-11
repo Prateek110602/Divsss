@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day Nine — The Last Note</title>
+<meta name="description" content="Day nine of nine.">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="day-label">Day Nine <span aria-hidden="true">·</span> 9 of 9</div>
+
+  <!-- Shown only if days 1-8 aren't genuinely finished yet. Friendly, no spoilers, no puzzle. -->
+  <main id="incomplete-screen" class="page-shell" hidden>
+    <div class="locked-screen">
+      <div class="locked-icon" aria-hidden="true">🕯️</div>
+      <h1>Not quite yet.</h1>
+      <p id="incompleteMessage"></p>
+      <p class="handwritten" style="font-size:1.3rem;">— this last page is worth the wait —</p>
+    </div>
+  </main>
+
+  <!-- The real final experience -->
+  <main id="day-content" class="page-shell" hidden aria-hidden="true">
+
+    <section class="calm-stage" id="calmStage">
+      <p class="eyebrow">nine notes, one story, one question</p>
+      <h1>You made it through all of it.</h1>
+      <p class="lead">Take a breath. This last one doesn't need solving — just opening.</p>
+      <div class="wax-seal" id="finalSeal" role="button" tabindex="0" aria-label="Press and hold to open the final letter">P</div>
+      <p class="hint-box visible" id="finalHint">hold, like always</p>
+    </section>
+
+    <section class="envelope-stage" id="envelopeStage" hidden>
+      <div class="envelope" id="envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap"></div>
+      </div>
+    </section>
+
+    <section class="letter-stage" id="letterStage" hidden>
+      <article class="letter final-letter" id="letter">
+        <p class="eyebrow">to you, finally</p>
+        <p id="typedGreeting" class="handwritten" style="font-size:1.9rem;"></p>
+        <p id="typedBody"></p>
+
+        <div class="invite-card" id="inviteCard" hidden>
+          <p class="eyebrow">the actual point of all nine notes</p>
+          <h2>Will you go on a date with me?</h2>
+          <dl class="invite-details">
+            <div><dt>Date</dt><dd>1st August</dd></div>
+            <div><dt>Time</dt><dd>[TIME]</dd></div>
+            <div><dt>Location</dt><dd>[LOCATION]</dd></div>
+            <div><dt>Dress code</dt><dd>[DRESS CODE — optional]</dd></div>
+          </dl>
+
+          <button type="button" class="btn btn-primary" id="rsvpBtn">I'm in</button>
+          <p class="rsvp-response handwritten" id="rsvpResponse" hidden></p>
+        </div>
+
+        <p class="signature handwritten">Love,<br>Prateek ❤</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="../assets/config/config.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/particles.js"></script>
+  <script src="../assets/js/utils.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

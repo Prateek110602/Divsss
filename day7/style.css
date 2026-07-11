@@ -1,0 +1,43 @@
+/* Day 7 — Hiding In Plain Sight */
+
+#day-content { max-width: 620px; width: 100%; }
+
+.love-note {
+  margin: var(--space-md) auto;
+}
+.love-note p { font-size: 1.2rem; }
+
+.heart-trigger {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted transparent; /* invisible tell, intentionally subtle */
+}
+.heart-trigger.pressing {
+  border-bottom-color: rgba(161, 92, 70, 0.35);
+}
+.heart-trigger.found {
+  color: var(--rose-accent);
+}
+.heart-trigger .found-heart {
+  display: inline-block;
+  margin-left: 0.2em;
+  animation: fadeIn 400ms ease both;
+}
+
+.found-counter {
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hint-box { text-align: center; }
+
+.reveal-box {
+  max-width: 480px;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+  animation: fadeIn 1s ease both;
+}

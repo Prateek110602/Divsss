@@ -1,0 +1,104 @@
+/* Day 3 — The Shelf */
+
+#day-content { max-width: 720px; width: 100%; }
+
+.bookshelf {
+  position: relative;
+  max-width: 640px;
+  margin: var(--space-md) auto;
+  background: linear-gradient(180deg, #6d4a30, #4a2f1c);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  padding: 26px 20px 0;
+  min-height: 260px;
+}
+
+.shelf-back {
+  position: absolute;
+  inset: 10px 10px 30px 10px;
+  background: #3a2415;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cubby {
+  animation: fadeIn 500ms ease both;
+}
+
+.folded-note {
+  background: var(--cream-paper);
+  color: var(--ink);
+  padding: 0.9em 1.6em;
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transform: rotate(-2deg);
+  transition: transform 200ms ease;
+}
+.folded-note:hover { transform: rotate(0deg) scale(1.04); }
+
+.shelf-books {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  min-height: 210px;
+  padding-bottom: 0;
+}
+
+.shelf-plank {
+  height: 18px;
+  background: linear-gradient(180deg, #8a5a34, #5b3a22);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+.book-spine {
+  position: relative;
+  width: 42px;
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 2px;
+  transition: transform 260ms ease, filter 260ms ease;
+  cursor: pointer;
+}
+.book-spine:hover { transform: translateY(-6px); }
+.book-spine .title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.88);
+  text-align: center;
+  line-height: 1.2;
+}
+.book-spine.upside-down .title { transform: rotate(180deg); }
+
+.book-spine.wrong.shake { animation: shakeNo 0.5s ease; }
+
+.book-spine.pulled {
+  transform: translateY(-160px) rotate(-4deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hint-box { text-align: center; }
+
+.reveal-box {
+  max-width: 500px;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+  animation: fadeIn 1s ease both;
+}
+
+@media (max-width: 560px) {
+  .shelf-books { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .book-spine { flex: 0 0 auto; }
+}
