@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day One — A Sealed Beginning</title>
+<meta name="description" content="Day one of nine.">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="day-label">Day One <span aria-hidden="true">·</span> 1 of 9</div>
+
+  <!-- LOCKED SCREEN: day 1 is always unlocked, but the markup exists for template consistency -->
+  <main id="locked-screen" class="page-shell" hidden>
+    <div class="locked-screen"></div>
+  </main>
+
+  <!-- ACTUAL DAY CONTENT -->
+  <main id="day-content" class="page-shell" hidden aria-hidden="true">
+
+    <section class="intro-stage" id="introStage">
+      <p class="eyebrow">nine notes · one story</p>
+      <h1>Before you open anything —</h1>
+      <p class="lead">
+        There's a wax seal below. It won't crack for a quick click.
+        Hold it. Really hold it. Some things only open for people
+        who are willing to wait a second longer than they want to.
+      </p>
+
+      <button type="button" class="wax-seal" id="waxSeal" aria-label="Press and hold to break the wax seal">P</button>
+
+      <p class="hint-box" id="sealHint" aria-live="polite"></p>
+    </section>
+
+    <section class="envelope-stage" id="envelopeStage" hidden>
+      <div class="envelope" id="envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap"></div>
+      </div>
+    </section>
+
+    <section class="letter-stage" id="letterStage" hidden>
+      <article class="letter" id="letter">
+        <p class="eyebrow">day one</p>
+        <p id="typedGreeting" class="handwritten" style="font-size:1.9rem;"></p>
+
+        <p id="typedBody1"></p>
+
+        <p>
+          Somehow my favourite hobby became thinking about you — which is a
+          very inefficient hobby, because it takes up hours I'm supposed to
+          be doing literally anything else. I've made peace with it.
+        </p>
+
+        <p>
+          I like that your favourite colour is brown and beige, honestly.
+          Feels like the universe already knew what I'd end up building for you.
+        </p>
+
+        <p class="ink-instruction">
+          (some ink here only shows itself if you're willing to touch the page —
+          try dragging your finger, or your cursor, across the quiet lines below)
+        </p>
+
+        <p class="invisible-ink" id="invisibleInk">
+          P.S. — the next note isn't hiding somewhere far. Tomorrow, look
+          somewhere you don't usually look twice. Small things are about
+          to matter a lot.
+        </p>
+
+        <p class="journal-fragment">
+          "started writing this at 1am, which tells you everything about
+          how much of my sleep you already owe me." — Prateek, probably
+        </p>
+
+        <p class="signature handwritten">— Prateek ❤</p>
+
+        <div class="solved-note" id="solvedNote" hidden>
+          <p class="handwritten" style="font-size:1.4rem;">
+            🍂 Day One, sealed with love. Come back tomorrow for the next note.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <div class="progress-dots" aria-hidden="true">
+      <span class="filled"></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </main>
+
+  <script src="../assets/config/config.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/particles.js"></script>
+  <script src="../assets/js/utils.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

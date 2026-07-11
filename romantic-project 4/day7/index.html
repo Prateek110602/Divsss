@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day Seven — Hiding In Plain Sight</title>
+<meta name="description" content="Day seven of nine.">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="day-label">Day Seven <span aria-hidden="true">·</span> 7 of 9</div>
+
+  <main id="locked-screen" class="page-shell" hidden>
+    <div class="locked-screen"></div>
+  </main>
+
+  <main id="day-content" class="page-shell" hidden aria-hidden="true">
+    <p class="eyebrow" style="text-align:center;">a few honest paragraphs</p>
+    <h1 style="text-align:center;">Some hearts are hiding in plain sight.</h1>
+    <p class="lead" style="text-align:center;max-width:480px;margin:0 auto var(--space-md);color:var(--text-muted);">
+      Press and hold on the words that feel a little warmer than the rest.
+    </p>
+
+    <article class="paper-card love-note">
+      <p>
+        Being <span class="heart-trigger" data-id="1">dangerously attractive</span> should
+        honestly require a licence. I'm fairly sure you'd fail the background check
+        for being too distracting.
+      </p>
+      <p>
+        I don't think you understand how <span class="heart-trigger" data-id="2">unfairly adorable</span>
+        you are, and I say that as someone who has done extensive, very biased research.
+      </p>
+      <p>
+        I still smile before I even realise your name <span class="heart-trigger" data-id="3">popped into my head</span>
+        again — which, at this point, is basically a full-time unpaid job.
+      </p>
+      <p>
+        You wear <span class="heart-trigger" data-id="4">brown and beige</span> like you invented
+        the colours yourself, and honestly, at this point, I believe you might have.
+      </p>
+      <p>
+        Somewhere between the coffee, the books, and the shelf that still isn't organised,
+        my favourite hobby quietly <span class="heart-trigger" data-id="5">became thinking about you</span>.
+      </p>
+      <p>
+        And yes — <span class="heart-trigger" data-id="6">Dumb Prateek</span> is still figuring out
+        how one person got this endlessly interesting.
+      </p>
+    </article>
+
+    <p class="found-counter" aria-live="polite">Hearts found: <span id="foundCount">0</span> / 6</p>
+    <p class="hint-box" id="heartsHint" aria-live="polite"></p>
+
+    <div class="reveal-box" id="revealBox" hidden>
+      <p class="journal-fragment" id="revealFragment"></p>
+      <p id="revealText"></p>
+      <p class="handwritten" style="font-size:1.4rem;color:var(--rose-accent);">— Puchuuu, one more page to go after this</p>
+    </div>
+
+    <div class="progress-dots" aria-hidden="true">
+      <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
+      <span class="filled"></span><span class="filled"></span><span></span><span></span>
+    </div>
+  </main>
+
+  <script src="../assets/config/config.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/particles.js"></script>
+  <script src="../assets/js/utils.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

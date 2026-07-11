@@ -1,0 +1,199 @@
+/* Day 2 — The Quiet Room (hidden object scene), pure CSS illustration, no images */
+
+#day-content { max-width: 700px; width: 100%; }
+
+.scrapbook-scene {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  height: 440px;
+  margin: var(--space-md) auto var(--space-sm);
+  background: linear-gradient(180deg, #caa06e 0%, #a97c50 100%);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.desk-surface {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 40px);
+}
+
+.desk-item { position: absolute; }
+
+/* --- Window --- */
+.window {
+  top: 24px; left: 24px;
+  width: 130px; height: 90px;
+  background: #dce7e2;
+  border: 6px solid #6d4a30;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+}
+.window-pane { background: linear-gradient(160deg, #eef6f2, #cfe0da); }
+
+/* --- Frame --- */
+.frame {
+  top: 30px; right: 28px;
+  width: 110px; height: 110px;
+  background: #f6ecd8;
+  border: 8px solid #7a4f30;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+  box-shadow: var(--shadow-soft);
+}
+.frame-caption {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* --- Book stack --- */
+.book-stack {
+  left: 34px; bottom: 26px;
+  width: 140px; height: 70px;
+}
+.book { position: absolute; height: 20px; border-radius: 3px; box-shadow: 0 3px 6px rgba(0,0,0,0.2); }
+.book-1 { bottom: 0;  width: 130px; background: #6d3b2a; transform: rotate(-1deg); }
+.book-2 { bottom: 20px; width: 115px; background: #8a5a34; transform: rotate(1.5deg); left: 6px; }
+.book-3 { bottom: 40px; width: 95px;  background: #c9a25c; transform: rotate(-2deg); left: 14px; }
+
+/* --- Coffee cup --- */
+.coffee-cup {
+  right: 40px; bottom: 30px;
+  width: 70px; height: 60px;
+}
+.coffee-cup::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 70px; height: 44px;
+  background: #f4ead9;
+  border-radius: 0 0 34px 34px / 0 0 20px 20px;
+  border: 3px solid #5b3a29;
+  border-top: none;
+}
+.coffee-cup::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 6px;
+  width: 58px; height: 10px;
+  background: #3a241a;
+  border-radius: 50%;
+}
+.cup-handle {
+  position: absolute;
+  right: -14px; top: 14px;
+  width: 18px; height: 22px;
+  border: 4px solid #5b3a29;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+}
+.cup-steam {
+  position: absolute;
+  top: -22px;
+  width: 5px; height: 20px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 40%;
+  animation: dustFloat 3s ease-in-out infinite;
+}
+.cup-steam.s1 { left: 18px; animation-delay: 0s; }
+.cup-steam.s2 { left: 32px; animation-delay: 1s; }
+
+/* --- Plant --- */
+.plant {
+  right: 120px; bottom: 26px;
+  width: 80px; height: 90px;
+}
+.plant .pot {
+  position: absolute; bottom: 0; left: 20px;
+  width: 40px; height: 30px;
+  background: #7a4f30;
+  border-radius: 4px 4px 10px 10px;
+}
+.plant .leaf {
+  position: absolute;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 14px 40px 14px;
+  border-color: transparent transparent #4f6b3a transparent;
+  bottom: 24px;
+}
+.leaf.l1 { left: 6px; transform: rotate(-18deg); }
+.leaf.l2 { left: 26px; transform: rotate(0deg); border-bottom-color: #6a8a4e; }
+.leaf.l3 { left: 46px; transform: rotate(18deg); }
+
+/* --- Pinned journal fragment --- */
+.journal-fragment.pinned {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  background: #fbf4e6;
+  padding: 0.6em 1em;
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  font-size: 1.25rem;
+  max-width: 260px;
+  text-align: center;
+  border-left: none;
+}
+
+/* --- Hidden hearts: nearly invisible until hovered, "found" state is a real reward --- */
+.hidden-heart {
+  position: absolute;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.06);
+  background: none;
+  padding: 6px;
+  transition: color 300ms ease, transform 300ms ease;
+  z-index: 3;
+}
+.hidden-heart:hover { color: rgba(161, 92, 70, 0.5); transform: scale(1.3); }
+.hidden-heart.found {
+  color: var(--rose-accent);
+  transform: scale(1.5);
+  animation: heartFloat 1.1s ease forwards;
+  pointer-events: none;
+}
+
+.window .hidden-heart  { top: 8px; right: 6px; }
+.frame  .hidden-heart  { bottom: 4px; right: 4px; }
+.book-stack .hidden-heart { top: -6px; left: 60px; }
+.coffee-cup .hidden-heart { bottom: 10px; left: 26px; }
+.plant .hidden-heart   { top: 6px; left: 30px; }
+
+.found-counter {
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hint-box { text-align: center; }
+
+.reveal-box {
+  max-width: 480px;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+  animation: fadeIn 1s ease both;
+}
+
+@media (max-width: 560px) {
+  .scrapbook-scene { height: 520px; }
+  .frame { right: 16px; top: 150px; }
+  .window { left: 16px; }
+  .plant { right: 20px; bottom: 100px; }
+  .coffee-cup { right: 40px; bottom: 26px; }
+  .book-stack { left: 20px; bottom: 26px; }
+  .journal-fragment.pinned { bottom: 150px; }
+}
